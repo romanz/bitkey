@@ -58,7 +58,7 @@ sudo chmod +x /usr/local/bin/electrum
 
 # install electrum-dash dependencies
 #mkdir $SHARE/electrum-dash/packages/
-/bin/cp $SHARE/electrum/packages/* $SHARE/electrum-dash/packages/ -R  
+/bin/cp $SHARE/electrum/packages/* $SHARE/electrum-dash/packages/ -R
 
 # unpack Exodus
 unzip exodus-*.zip -d .
@@ -85,3 +85,14 @@ rm keepassxc*.deb
 # install armory
 sudo dpkg -i armory*.deb
 rm armory*.deb
+
+# unpack audio MODEM Python library
+tar -zxf amodem-*.tar.gz
+rm amodem-*.tar.gz
+
+# install audio MODEM Python library
+cd amodem-*
+python setup.py install
+cd -
+rm -r amodem-*
+
